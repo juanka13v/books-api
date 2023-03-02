@@ -25,10 +25,6 @@ const bookSchema = new Schema({
         required: true
     },
     publisher: String,
-    language: {
-        type: String,
-        required: true
-    },
     created_at: {
         type: Date,
         default: Date.now
