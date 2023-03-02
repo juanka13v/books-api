@@ -3,6 +3,7 @@ const express = require('express')
 const errorHandler = require('./middlewares/errorHandler')
 const userRouter = require('./routes/user.route')
 const bookRouter = require('./routes/book.route')
+const authorRouter = require('./routes/author.route')
 const app = express()
 
 // connect to MongoDB
@@ -16,6 +17,7 @@ app.use(express.json());
 // routes
 app.use("/api/v1", userRouter);
 app.use("/api/v1", bookRouter);
+app.use("/api/v1", authorRouter);
 
 app.get('/', (req, res) => {
   res.send('This world 3')
