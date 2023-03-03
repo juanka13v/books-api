@@ -6,10 +6,11 @@ const commentSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    book: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Book',
-      required: true,
+    qualification: {
+      type:Number,
+      min: 0,
+      max: 10,
+      default: 0
     },
     author: {
       type: mongoose.Schema.Types.ObjectId,

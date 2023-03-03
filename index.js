@@ -4,6 +4,9 @@ const errorHandler = require('./middlewares/errorHandler')
 const userRouter = require('./routes/user.route')
 const bookRouter = require('./routes/book.route')
 const authorRouter = require('./routes/author.route')
+const sagaRouter = require('./routes/saga.route')
+const commentRouter = require('./routes/comment.route')
+
 const app = express()
 
 // connect to MongoDB
@@ -18,6 +21,8 @@ app.use(express.json());
 app.use("/api/v1", userRouter);
 app.use("/api/v1", bookRouter);
 app.use("/api/v1", authorRouter);
+app.use("/api/v1", sagaRouter);
+app.use("/api/v1", commentRouter);
 
 app.get('/', (req, res) => {
   res.send('This world 3')

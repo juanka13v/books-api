@@ -15,6 +15,12 @@ const authorSchema = new mongoose.Schema(
                 ref: 'Book',
             },
         ],
+        sagas: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "Saga"
+            }
+        ],
         avatar: {
             type: String,
         },

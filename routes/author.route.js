@@ -9,7 +9,7 @@ const {
     updateAuthor  
 } = require("../controllers/author.controller");
 
-s
+
 router.route("/authors").get(getAllAuthors).post(createAuthor);
 router.route("/author/:id").get(getAuthor).put(updateAuthor).delete(deleteAuthor);
 

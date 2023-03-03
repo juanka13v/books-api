@@ -35,6 +35,7 @@ const getAuthor = async (req, res, next) => {
 
 const createAuthor = async (req, res, next) => {
     const newAuthor = new Author(req.body);
+    console.log(req.body);
 
     try {
         const saveAuthor = await newAuthor.save();
@@ -53,7 +54,7 @@ const deleteAuthor = async (req, res, next) => {
             return res.status(404).json({ status: "error", message: "author not exist" });
         }
 
-        res.status(203).json({ status: "success", message: "author eliminated" });
+        res.status(202).json({ status: "success", message: "author eliminated" });
     } catch (err) {
         next(err)
     }
@@ -68,7 +69,7 @@ const updateAuthor = async (req, res) => {
         const updatedAuthor = await Author.findByIdAndUpdate(id, update, {
             new: true,
         });
-        res.status(203).json({ status: "success", author: updatedAuthor });
+        res.status(202).json({ status: "success", author: updatedAuthor });
     } catch (err) {
         next(err)
     }
