@@ -1,11 +1,14 @@
 require("dotenv").config();
 const express = require('express')
-const errorHandler = require('./middlewares/errorHandler')
+
 const userRouter = require('./routes/user.route')
 const bookRouter = require('./routes/book.route')
 const authorRouter = require('./routes/author.route')
 const sagaRouter = require('./routes/saga.route')
 const commentRouter = require('./routes/comment.route')
+
+const notFoundMiddleware = require('./middlewares/not-found');
+const errorHandlerMiddleware = require('./middlewares/error-handler');
 
 const app = express()
 
@@ -14,7 +17,6 @@ const connectDB = require("./db/connect");
 
 
 // middlewares
-app.use(errorHandler);
 app.use(express.json());
 
 // routes
@@ -25,13 +27,14 @@ app.use("/api/v1", sagaRouter);
 app.use("/api/v1", commentRouter);
 
 app.get('/', (req, res) => {
-  res.send('This world 3')
+  res.send('Books api')
 })
 
-app.get('/api/v1/hello', (req, res) => {
-  res.status(200).json({status:'ok'})
 
-})
+
+app.use(notFoundMiddleware);
+app.use(errorHandlerMiddleware);
+
 
 
 const port = process.env.PORT || 3000;

@@ -1,20 +1,17 @@
 const Book = require('../models/Book')
 
+const { StatusCodes } = require('http-status-codes')
+const { BadRequestError, NotFoundError } = require('../errors')
+
 
 const getAllBooks = async (req, res, next) => {
-    try {
-        const books = await Book.find()
-
-        if (!books) {
-            res.status(404).json({ status: 'error', message: 'books not found' })
-        }
-
-        res.status(200).json({ status: 'success', books })
-
-    } catch (err) {
-        next(err)
+    const books = await Book.find()
+    
+    if(books.length < 1) {
+        throw new NotFoundError('No books found.')
     }
 
+   res.status(StatusCodes.OK).json({books})
 };
 
 const getBook = async (req, res, next) => {
