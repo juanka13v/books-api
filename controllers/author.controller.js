@@ -1,78 +1,52 @@
 const Author = require('../models/Author')
+const { StatusCodes } = require('http-status-codes');
+const { NotFoundError } = require('../errors')
 
 
 const getAllAuthors = async (req, res, next) => {
-    try {
-        const authors = await Author.find()
+    const authors = await Author.find()
 
-        if (!authors) {
-            res.status(404).json({ status: 'error', message: 'authors not found' })
-        }
+    if (authors.length < 1) throw new NotFoundError(`No authors found.`)
 
-        res.status(200).json({ status: 'success', authors })
-
-    } catch (err) {
-        next(err)
-    }
-
+    res.status(StatusCodes.OK).json({ status: 'success', authors })
 };
 
 const getAuthor = async (req, res, next) => {
     const { id } = req.params;
+    const author = await Author.findById(id);
 
-    try {
-        const author = await Author.findById(id);
+    if (!author) throw new NotFoundError(`No author with id ${id}`)
 
-
-        if (!author)
-            return res.status(404).json({ status: "error", message: "author not found" });
-
-        res.status(200).json({ status: 'success', author })
-    } catch (err) {
-        next(err)
-    }
+    res.status(StatusCodes.OK).json({ status: 'success', author })
 };
 
 const createAuthor = async (req, res, next) => {
     const newAuthor = new Author(req.body);
-    console.log(req.body);
+    const saveAuthor = await newAuthor.save();
 
-    try {
-        const saveAuthor = await newAuthor.save();
-        res.status(201).json({ status: "created", author: saveAuthor });
-    } catch (err) {
-        next(err)
-    }
+    res.status(StatusCodes.CREATED).json({ status: "created", author: saveAuthor });
 };
 
 const deleteAuthor = async (req, res, next) => {
     const { id } = req.params;
+    const deletedAuthor = await Author.findByIdAndDelete(id);
 
-    try {
-        const deletedAuthor = await Author.findByIdAndDelete(id);
-        if (!deletedAuthor) {
-            return res.status(404).json({ status: "error", message: "author not exist" });
-        }
+    if (!deletedAuthor) throw new NotFoundError(`No author with id ${id}`)
 
-        res.status(202).json({ status: "success", message: "author eliminated" });
-    } catch (err) {
-        next(err)
-    }
-
+    res.status(StatusCodes.OK).json({ status: "success", message: "author eliminated" });
 };
 
 const updateAuthor = async (req, res) => {
     const { id } = req.params;
     const update = req.body;
 
-    try {
-        const updatedAuthor = await Author.findByIdAndUpdate(id, update, {
-            new: true,
-        });
-        res.status(202).json({ status: "success", author: updatedAuthor });
-    } catch (err) {
-        next(err)
-    }
+    const updatedAuthor = await Author.findByIdAndUpdate(id, update, {
+        new: true,
+    });
+
+    if (!updateAuthor) throw new NotFoundError(`No author with id ${id}`)
+
+    res.status(StatusCodes.OK).json({ status: "success", author: updatedAuthor });
 };
 
 module.exports = {
