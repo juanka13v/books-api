@@ -1,74 +1,52 @@
 const Book = require('../models/Book')
 
 const { StatusCodes } = require('http-status-codes')
-const { BadRequestError, NotFoundError } = require('../errors')
+const { NotFoundError } = require('../errors')
 
 
 const getAllBooks = async (req, res, next) => {
     const books = await Book.find()
-    
-    if(books.length < 1) {
-        throw new NotFoundError('No books found.')
-    }
+    if (books.length < 1) throw new NotFoundError('No books found.')
 
-   res.status(StatusCodes.OK).json({books})
+    res.status(StatusCodes.OK).json({ books })
 };
 
 const getBook = async (req, res, next) => {
     const { id } = req.params;
+    const book = await Book.findById(id);
 
-    try {
-        const book = await Book.findById(id);
+    if (!book) throw new NotFoundError(`No book with id: ${id}`)
 
-
-        if (!book)
-            return res.status(404).json({ status: "error", message: "book not found" });
-
-        res.status(200).json({ status: 'success', book })
-    } catch (err) {
-        next(err)
-    }
+    res.status(StatusCodes.OK).json({ status: 'success', book })
 };
 
 const createBook = async (req, res, next) => {
     const newBook = new Book(req.body);
+    const saveBook = await newBook.save();
 
-    try {
-        const saveBook = await newBook.save();
-        res.status(201).json({ status: "created", book: saveBook });
-    } catch (err) {
-        next(err)
-    }
+    res.status(StatusCodes.CREATED).json({ status: "created", book: saveBook });
 };
 
 const deleteBook = async (req, res, next) => {
     const { id } = req.params;
+    const deletedBook = await Book.findByIdAndDelete(id);
 
-    try {
-        const deletedBook = await Book.findByIdAndDelete(id);
-        if (!deletedBook) {
-            return res.status(404).json({ status: "error", message: "book not exist" });
-        }
+    if (!deletedBook) throw new NotFoundError(`No book with id: ${id}`)
 
-        res.status(203).json({ status: "success", message: "book eliminated" });
-    } catch (err) {
-        next(err)
-    }
-
+    res.status(StatusCodes.OK).json({ status: "success", message: `Deleted book with id: ${id}` });
 };
 
 const updateBook = async (req, res) => {
     const { id } = req.params;
     const update = req.body;
 
-    try {
-        const updatedBook = await Book.findByIdAndUpdate(id, update, {
-            new: true,
-        });
-        res.status(203).json({ status: "success", book: updatedBook });
-    } catch (err) {
-        next(err)
-    }
+    const updatedBook = await Book.findByIdAndUpdate(id, update, {
+        new: true,
+    });
+
+    if (!updatedBook) throw new NotFoundError(`No book with id ${id}`)
+
+    res.status(StatusCodes.OK).json({ status: "success", book: updatedBook });
 };
 
 module.exports = {
