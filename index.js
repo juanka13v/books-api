@@ -2,6 +2,9 @@ require("dotenv").config();
 require('express-async-errors')
 const express = require('express')
 
+const authUser = require('./middlewares/authentication')
+
+
 const userRouter = require('./routes/user.route')
 const bookRouter = require('./routes/book.route')
 const authorRouter = require('./routes/author.route')
@@ -26,8 +29,8 @@ app.use("/api/v1", userRouter);
 app.use("/api/v1", bookRouter);
 app.use("/api/v1", authorRouter);
 app.use("/api/v1", sagaRouter);
-app.use("/api/v1", commentRouter);
 app.use("/api/v1", authRouter);
+app.use("/api/v1", authUser, commentRouter);
 
 app.get('/', (req, res) => {
   res.send('Books api')

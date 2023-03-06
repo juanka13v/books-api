@@ -7,16 +7,16 @@ const commentSchema = new mongoose.Schema(
       required: true,
     },
     qualification: {
-      type:Number,
+      type: Number,
       min: 0,
       max: 10,
       default: 0
     },
-    author: {
+    user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
-      required: true,
-    },
+      required: [true, 'required some text'],
+    }
   },
   { timestamps: true }
 );
