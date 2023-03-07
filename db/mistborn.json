@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Mistborn: The Final Empire",
+        "author": "Brandon Sanderson",
+        "genre": "Epic Fantasy",
+        "summary": "In a world where the sun is red, ash falls from the sky, and the nobility hold all the power, a young street urchin named Vin discovers that she has an incredible power - the ability to control metals. Recruited by a crew of thieves, she learns to use her powers and becomes embroiled in a plot to overthrow the tyrannical Lord Ruler.",
+        "num_pages": 541,
+        "publisher": "Tor Books"
+    },
+    {
+        "title": "Mistborn: The Well of Ascension",
+        "author": "Brandon Sanderson",
+        "genre": "Epic Fantasy",
+        "summary": "With the Lord Ruler defeated, Vin and her friends must navigate the dangerous waters of politics and power as they try to build a new society in the ashes of the old. But a new threat looms on the horizon, one that could destroy everything they have worked for and plunge the world back into darkness.",
+        "num_pages": 590,
+        "publisher": "Tor Books"
+    },
+    {
+        "title": "Mistborn: The Hero of Ages",
+        "author": "Brandon Sanderson",
+        "genre": "Epic Fantasy",
+        "summary": "As the world comes to an end, Vin and her allies must face the ultimate challenge - stopping the godlike being known as Ruin from destroying everything they hold dear. But in order to do so, they must unravel the mysteries of the past and discover the true nature of their powers.",
+        "num_pages": 724,
+        "publisher": "Tor Books"
+    },
+    {
+        "title": "The Alloy of Law",
+        "author": "Brandon Sanderson",
+        "genre": "Epic Fantasy",
+        "summary": "Set 300 years after the events of the original Mistborn trilogy, The Alloy of Law follows the adventures of Waxillium Ladrian, a lawman with the ability to push on metals. When a new threat emerges in the city of Elendel, Wax must use all his skills and his powers to stop it before it's too late.",
+        "num_pages": 332,
+        "publisher": "Tor Books"
+    },
+    {
+        "title": "Shadows of Self",
+        "author": "Brandon Sanderson",
+        "genre": "Epic Fantasy",
+        "summary": "Waxillium Ladrian is back, and this time he's facing a new threat - one that hits close to home. With the help of his friends, Wax must unravel the mystery of the Bands of Mourning and stop those who seek to use them for their own nefarious purposes.",
+        "num_pages": 383,
+        "publisher": "Tor Books"
+    },
+    {
+        "title": "The Bands of Mourning",
+        "author": "Brandon Sanderson",
+        "genre": "Epic Fantasy",
+        "summary": "In the explosive conclusion to the Wax and Wayne series, Waxillium Ladrian and his friends must race against time to uncover the secrets of the past and stop those who seek to use the Bands of Mourning for their own gain. But as they delve deeper into the mystery, they realize that the true enemy may be closer than they ever imagined.",
+        "num_pages": 447,
+        "publisher": "Tor Books"
+    }
+]

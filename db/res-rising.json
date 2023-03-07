@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Red Rising",
+        "author": "Pierce Brown",
+        "genre": "Science Fiction",
+        "summary": "In a future society where social status is determined by color-coded castes, a lowly Red miner named Darrow infiltrates the ruling Gold caste to bring about revolution and overthrow the oppressive system.",
+        "num_pages": 382,
+        "publisher": "Del Rey Books"
+    },
+    {
+        "title": "Golden Son",
+        "author": "Pierce Brown",
+        "genre": "Science Fiction",
+        "summary": "Darrow continues his quest for revolution and revenge against the Golds, but the stakes are higher than ever as he becomes embroiled in interstellar politics and a web of betrayal.",
+        "num_pages": 442,
+        "publisher": "Del Rey Books"
+    },
+    {
+        "title": "Morning Star",
+        "author": "Pierce Brown",
+        "genre": "Science Fiction",
+        "summary": "As the war between the rebellious Reds and the ruling Golds reaches its climax, Darrow must face his greatest challenge yet and make the ultimate sacrifice for the cause.",
+        "num_pages": 518,
+        "publisher": "Del Rey Books"
+    },
+    {
+        "title": "Iron Gold",
+        "author": "Pierce Brown",
+        "genre": "Science Fiction",
+        "summary": "Ten years after the events of Morning Star, a new generation of leaders must grapple with the aftermath of the revolution and navigate the complex political landscape of the newly-formed Solar Republic.",
+        "num_pages": 624,
+        "publisher": "Del Rey Books"
+    },
+    {
+        "title": "Dark Age",
+        "author": "Pierce Brown",
+        "genre": "Science Fiction",
+        "summary": "The Solar Republic is in turmoil as old alliances fracture and new enemies emerge from the shadows. Amidst the chaos, Darrow and his allies must fight to keep the dream of a better future alive.",
+        "num_pages": 704,
+        "publisher": "Del Rey Books"
+    },
+    {
+        "title": "Lightbringer",
+        "author": "Pierce Brown",
+        "genre": "Science Fiction",
+        "summary": "The sixth and final book in the Red Rising series, Lightbringer promises to bring the epic saga to its thrilling conclusion as Darrow faces his greatest challenge yet and the fate of the Solar Republic hangs in the balance.",
+        "num_pages": null,
+        "publisher": "Del Rey Books"
+    }
+]

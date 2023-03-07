@@ -1,0 +1,58 @@
+[
+    {
+        "title": "Game of Thrones",
+        "author": "George R. R. Martin",
+        "genre": "Epic Fantasy",
+        "summary": "In the Seven Kingdoms of Westeros, a battle for the Iron Throne rages between the noble houses of the realm. Amidst political intrigue, familial conflict, and betrayal, the Stark, Lannister, and Targaryen families are all vying for power. Meanwhile, an ancient evil awakens beyond the Wall, threatening to destroy everything in its path.",
+        "num_pages": 694,
+        "publisher": "Bantam Spectra"
+    },
+    {
+        "title": "Clash of Kings",
+        "author": "George R. R. Martin",
+        "genre": "Epic Fantasy",
+        "summary": "As the War of the Five Kings rages on, the struggle for power in Westeros continues to escalate. The Starks, Lannisters, and Baratheons all fight for control of the Seven Kingdoms, while Daenerys Targaryen begins her quest to reclaim the Iron Throne from across the sea.",
+        "num_pages": 761,
+        "publisher": "Bantam Spectra"
+    },
+    {
+        "title": "Storm of Swords",
+        "author": "George R. R. Martin",
+        "genre": "Epic Fantasy",
+        "summary": "The War of the Five Kings comes to a head as new players enter the fray and old alliances are tested. The fate of the Seven Kingdoms hangs in the balance as the Starks, Lannisters, and Targaryens all make their moves in the game of thrones.",
+        "num_pages": 973,
+        "publisher": "Bantam Spectra"
+    },
+    {
+        "title": "Feast for Crows",
+        "author": "George R. R. Martin",
+        "genre": "Epic Fantasy",
+        "summary": "With the war in Westeros winding down, the focus shifts to the aftermath as the surviving players jockey for power and control. Meanwhile, new threats arise from unexpected places, and the fate of the Seven Kingdoms remains as uncertain as ever.",
+        "num_pages": 753,
+        "publisher": "Bantam Spectra"
+    },
+    {
+        "title": "Dance with Dragons",
+        "author": "George R. R. Martin",
+        "genre": "Epic Fantasy",
+        "summary": "As the conflict between the remaining noble houses of Westeros continues to simmer, Daenerys Targaryen makes her long-awaited return to the Seven Kingdoms with her sights set on the Iron Throne. But in the North, an ancient evil is stirring, and the fate of the realm may rest in the hands of a few unlikely heroes.",
+        "num_pages": 1040,
+        "publisher": "Bantam Spectra"
+    },
+    {
+        "title": "The Winds of Winter",
+        "author": "George R. R. Martin",
+        "genre": "Epic Fantasy",
+        "summary": "The long-awaited sixth novel in the A Song of Ice and Fire series, The Winds of Winter promises to continue the story of Westeros and its inhabitants as they navigate the ever-changing political landscape and face new threats from both within and without.",
+        "num_pages": null,
+        "publisher": "Bantam Spectra"
+    },
+    {
+        "title": "Dream of Spring",
+        "author": "George R. R. Martin",
+        "genre": "Epic Fantasy",
+        "summary": "The seventh and final novel in the A Song of Ice and Fire series, A Dream of Spring is expected to bring the story to its ultimate conclusion as the remaining players in the game of thrones make their final moves and the fate of the Seven Kingdoms is decided.",
+        "num_pages": null,
+        "publisher": "Bantam Spectra"
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "title": "Harry Potter and the Philosopher's Stone",
+        "author": "J.K. Rowling",
+        "genre": "Fantasy",
+        "summary": "Harry Potter is an ordinary boy who discovers his true identity as a wizard and attends Hogwarts School of Witchcraft and Wizardry. Along with his friends Ron Weasley and Hermione Granger, Harry battles the dark wizard Voldemort and his followers, the Death Eaters.",
+        "num_pages": 223,
+        "publisher": "Bloomsbury"
+    },
+    {
+        "title": "Harry Potter and the Chamber of Secrets",
+        "author": "J.K. Rowling",
+        "genre": "Fantasy",
+        "summary": "Harry Potter returns to Hogwarts School of Witchcraft and Wizardry for his second year, but a mysterious presence is terrorizing the school and petrifying its students. With the help of his friends Ron and Hermione, Harry uncovers the Chamber of Secrets and its dark secrets.",
+        "num_pages": 251,
+        "publisher": "Bloomsbury"
+    },
+    {
+        "title": "Harry Potter and the Prisoner of Azkaban",
+        "author": "J.K. Rowling",
+        "genre": "Fantasy",
+        "summary": "Harry Potter returns to Hogwarts School of Witchcraft and Wizardry for his third year, but a dangerous prisoner named Sirius Black has escaped from the wizarding prison Azkaban and is believed to be after Harry. With the help of new friends and magical creatures, Harry must confront his past and fight for his future.",
+        "num_pages": 317,
+        "publisher": "Bloomsbury"
+    },
+    {
+        "title": "Harry Potter and the Goblet of Fire",
+        "author": "J.K. Rowling",
+        "genre": "Fantasy",
+        "summary": "Harry Potter is selected to compete in the Triwizard Tournament, a dangerous and deadly competition between three wizarding schools. As Harry navigates the tournament and uncovers a plot to bring back the dark lord Voldemort, he must rely on his friends and his own strength to survive.",
+        "num_pages": 636,
+        "publisher": "Bloomsbury"
+    },
+    {
+        "title": "Harry Potter and the Order of Phoenix",
+        "author": "J.K. Rowling",
+        "genre": "Fantasy",
+        "summary": "Harry Potter returns to Hogwarts School of Witchcraft and Wizardry for his fifth year, but the wizarding world is in denial about the return of Voldemort and the Ministry of Magic is actively working against Harry and his friends. As Harry forms a secret organization to fight against Voldemort, he learns about the power of love and sacrifice.",
+        "num_pages": 766,
+        "publisher": "Bloomsbury"
+    },
+    {
+        "title": "Harry Potter and the Half-Blood Prince",
+        "author": "J.K. Rowling",
+        "genre": "Fantasy",
+        "summary": "As Voldemort gains power and begins his reign of terror, Harry Potter begins his sixth year at Hogwarts School of Witchcraft and Wizardry. With the help of Dumbledore and his friends, Harry uncovers the past of Voldemort and discovers the secret to defeating him.",
+        "num_pages": 607,
+        "publisher": "Bloomsbury"
+    },
+    {
+        "title": "Harry Potter and the Deathly Hallows",
+        "author": "J.K. Rowling",
+        "genre": "Fantasy",
+        "summary": "In the final battle against Voldemort, Harry Potter must find and destroy the remaining Horcruxes, objects that contain a piece of Voldemort's soul, in order to defeat him. With the help of his friends Ron and Hermione, Harry embarks on a dangerous mission that will test his strength and resolve. The epic conclusion of the Harry Potter series is a story of love, sacrifice, and the power of friendship.",
+        "num_pages": 759,
+        "publisher": "Bloomsbury"
+    }
+]

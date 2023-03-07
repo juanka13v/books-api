@@ -1,0 +1,34 @@
+[
+    {
+        "title": "The Way of Kings",
+        "author": "Brandon Sanderson",
+        "genre": "Epic Fantasy",
+        "summary": "In a world where storms are manifestations of divine wrath, the battle for control of the kingdom of Alethkar has begun. Kaladin, a disgraced soldier, struggles to find purpose in his life while Shallan, a noblewoman with a dark secret, seeks to uncover the truth behind her family's downfall. Together, they will uncover the secrets of the Knights Radiant and the true nature of the ancient conflict that has torn their world apart.",
+        "num_pages": 1007,
+        "publisher": "Tor Books"
+    },
+    {
+        "title": "Words of Radiance",
+        "author": "Brandon Sanderson",
+        "genre": "Epic Fantasy",
+        "summary": "As the war against the Parshendi intensifies, Kaladin struggles to overcome his past and fulfill his destiny as a Radiant. Meanwhile, Shallan infiltrates the court of the Alethi king, seeking to uncover a hidden plot that could change the course of the war. Together, they will face new challenges and discover the true power of the Knights Radiant.",
+        "num_pages": 1087,
+        "publisher": "Tor Books"
+    },
+    {
+        "title": "Oathbringer",
+        "author": "Brandon Sanderson",
+        "genre": "Epic Fantasy",
+        "summary": "Dalinar Kholin's past comes back to haunt him as he struggles to unite the kingdoms of Roshar against a new threat from the Voidbringers. Meanwhile, Kaladin and Shallan continue their journey of self-discovery as they confront the secrets of their pasts and the challenges of the present. Together, they will discover the true meaning of honor, sacrifice, and love.",
+        "num_pages": 1233,
+        "publisher": "Tor Books"
+    },
+    {
+        "title": "Rhythm of War",
+        "author": "Brandon Sanderson",
+        "genre": "Epic Fantasy",
+        "summary": "As the war with the Fused intensifies, the members of Bridge Four and the Knights Radiant must face their greatest challenges yet. Kaladin must confront his past and learn to forgive himself, while Shallan uncovers a conspiracy that threatens to destroy everything she holds dear. Meanwhile, Dalinar must lead the forces of Roshar to victory against the invading armies of Odium, or risk losing everything he has fought for.",
+        "num_pages": 1232,
+        "publisher": "Tor Books"
+    }
+]
