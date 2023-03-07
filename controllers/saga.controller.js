@@ -3,11 +3,11 @@ const { StatusCodes } = require('http-status-codes')
 const { NotFoundError } = require('../errors')
 
 const getAllSagas = async (req, res, next) => {
-    const sagas = await Saga.find()
+    const {totalCount} = res.paginateResults
 
-    if (sagas.length < 1) throw new NotFoundError(`No sagas found`)
+    if (totalCount < 1) throw new NotFoundError(`No sagas found`)
 
-    res.status(StatusCodes.OK).json({ status: 'success', sagas })
+    res.status(StatusCodes.OK).json(res.paginateResults)
 };
 
 const getSaga = async (req, res, next) => {

@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const paginate = require('../utils/paginate')
+const Book = require('../models/Book')
 
 const {
     getAllBooks,
@@ -10,7 +12,7 @@ const {
 } = require("../controllers/book.controller");
 
 
-router.route("/books").get(getAllBooks).post(createBook);
+router.route("/books").get(paginate(Book),getAllBooks).post(createBook);
 router.route("/book/:id").get(getBook).put(updateBook).delete(deleteBook);
 
 

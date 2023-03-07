@@ -4,11 +4,11 @@ const { NotFoundError } = require('../errors')
 
 
 const getAllAuthors = async (req, res, next) => {
-    const authors = await Author.find()
+    const {totalCount} = res.paginateResults
 
-    if (authors.length < 1) throw new NotFoundError(`No authors found.`)
+    if (totalCount < 1) throw new NotFoundError(`No authors found.`)
 
-    res.status(StatusCodes.OK).json({ status: 'success', authors })
+    res.status(StatusCodes.OK).json(res.paginateResults)
 };
 
 const getAuthor = async (req, res, next) => {

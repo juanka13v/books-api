@@ -2,13 +2,14 @@ const Book = require('../models/Book')
 
 const { StatusCodes } = require('http-status-codes')
 const { NotFoundError } = require('../errors')
+const paginate = require('../utils/paginate');
 
 
 const getAllBooks = async (req, res, next) => {
-    const books = await Book.find()
-    if (books.length < 1) throw new NotFoundError('No books found.')
+    const {totalCount} = res.paginatedResults
+    if (totalCount < 1) throw new NotFoundError('No books found.')
 
-    res.status(StatusCodes.OK).json({ books })
+    res.status(StatusCodes.OK).json(res.paginatedResults)
 };
 
 const getBook = async (req, res, next) => {
