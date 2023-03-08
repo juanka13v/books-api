@@ -23,12 +23,10 @@ const getBook = async (req, res, next) => {
 const createBook = async (req, res, next) => {
     const book = new Book(req.body);
 
-    console.log(req.files.image);
-
     if (req.files?.image) {
         const result = await uploadImage(req.files.image.tempFilePath, book.title, 'Books-images')
         book.image = {
-            image_id: result.public_id,
+            id: result.public_id,
             url: result.secure_url
         }
         await fs.unlink(req.files.image.tempFilePath)
@@ -45,7 +43,7 @@ const deleteBook = async (req, res, next) => {
 
     if (!deletedBook) throw new NotFoundError(`No book with id: ${id}`)
 
-    await deleteImage(deletedBook.image.image_id)
+    await deleteImage(deletedBook.image.id)
 
     res.status(StatusCodes.OK).json({ status: "success", message: `Deleted book with id: ${id}` });
 };
@@ -59,10 +57,10 @@ const updateBook = async (req, res) => {
     if (!book) throw new NotFoundError(`No book with id ${id}`)
 
     if (req.files?.image) {
-        await deleteImage(book.image.image_id)
+        await deleteImage(book.image.id)
         const result = await uploadImage(req.files.image.tempFilePath, book.title, 'Books-images')
         update.image = {
-            image_id: result.public_id,
+            id: result.public_id,
             url: result.secure_url
         }
         await fs.unlink(req.files.image.tempFilePath)

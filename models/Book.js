@@ -16,7 +16,7 @@ const bookSchema = new Schema({
     },
     summary: String,
     image: {
-        image_id: String,
+        id: String,
         url: String
     },
     publication_date: {

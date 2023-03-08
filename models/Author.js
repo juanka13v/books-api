@@ -21,8 +21,9 @@ const authorSchema = new mongoose.Schema(
                 ref: "Saga"
             }
         ],
-        avatar: {
-            type: String,
+        image: {
+            id: String,
+            url: String
         },
     },
     { timestamps: true }

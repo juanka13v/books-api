@@ -40,19 +40,14 @@ app.use("/api/v1", sagaRouter);
 app.use("/api/v1", authRouter);
 app.use("/api/v1", authUser, commentRouter);
 
-app.post('/upload', function (req, res) {
-  console.log(req.files); // the uploaded file object
-});
 
 app.get('/', (req, res) => {
   res.send('Books api')
 })
 
 
-
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
-
 
 
 const port = PORT || 3000;
