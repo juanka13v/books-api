@@ -1,6 +1,8 @@
 require("dotenv").config();
 require('express-async-errors')
 const express = require('express')
+const fileUpload = require('express-fileupload')
+const { MONGO_KEY, PORT } = require('./config')
 
 const authUser = require('./middlewares/authentication')
 
@@ -23,6 +25,12 @@ const connectDB = require("./db/connect");
 
 // middlewares
 app.use(express.json());
+app.use(
+  fileUpload({
+    useTempFiles: true,
+    tempFileDir: "./uploads",
+  })
+);
 
 // routes
 app.use("/api/v1", userRouter);
@@ -31,6 +39,10 @@ app.use("/api/v1", authorRouter);
 app.use("/api/v1", sagaRouter);
 app.use("/api/v1", authRouter);
 app.use("/api/v1", authUser, commentRouter);
+
+app.post('/upload', function (req, res) {
+  console.log(req.files); // the uploaded file object
+});
 
 app.get('/', (req, res) => {
   res.send('Books api')
@@ -43,12 +55,12 @@ app.use(errorHandlerMiddleware);
 
 
 
-const port = process.env.PORT || 3000;
+const port = PORT || 3000;
 
 const start = async () => {
   try {
     // connectDB
-    await connectDB(process.env.MONGO_KEY);
+    await connectDB(MONGO_KEY);
     console.log('connected');
     app.listen(port, console.log(`Server is listening port ${port}`));
   } catch (error) {

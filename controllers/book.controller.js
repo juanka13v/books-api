@@ -1,12 +1,11 @@
 const Book = require('../models/Book')
-
 const { StatusCodes } = require('http-status-codes')
 const { NotFoundError } = require('../errors')
-const paginate = require('../utils/paginate');
-
+const { uploadImage, deleteImage } = require('../utils/cloudinary')
+const fs = require('fs-extra')
 
 const getAllBooks = async (req, res, next) => {
-    const {totalCount} = res.paginatedResults
+    const { totalCount } = res.paginatedResults
     if (totalCount < 1) throw new NotFoundError('No books found.')
 
     res.status(StatusCodes.OK).json(res.paginatedResults)
@@ -22,10 +21,22 @@ const getBook = async (req, res, next) => {
 };
 
 const createBook = async (req, res, next) => {
-    const newBook = new Book(req.body);
-    const saveBook = await newBook.save();
+    const book = new Book(req.body);
 
-    res.status(StatusCodes.CREATED).json({ status: "created", book: saveBook });
+    console.log(req.files.image);
+
+    if (req.files?.image) {
+        const result = await uploadImage(req.files.image.tempFilePath, book.title, 'Books-images')
+        book.image = {
+            image_id: result.public_id,
+            url: result.secure_url
+        }
+        await fs.unlink(req.files.image.tempFilePath)
+    }
+
+    const saveBook = await book.save();
+
+    res.status(StatusCodes.CREATED).json({ status: "created", book });
 };
 
 const deleteBook = async (req, res, next) => {
@@ -34,6 +45,8 @@ const deleteBook = async (req, res, next) => {
 
     if (!deletedBook) throw new NotFoundError(`No book with id: ${id}`)
 
+    await deleteImage(deletedBook.image.image_id)
+
     res.status(StatusCodes.OK).json({ status: "success", message: `Deleted book with id: ${id}` });
 };
 
@@ -41,11 +54,23 @@ const updateBook = async (req, res) => {
     const { id } = req.params;
     const update = req.body;
 
+    const book = await Book.findById(id)
+
+    if (!book) throw new NotFoundError(`No book with id ${id}`)
+
+    if (req.files?.image) {
+        await deleteImage(book.image.image_id)
+        const result = await uploadImage(req.files.image.tempFilePath, book.title, 'Books-images')
+        update.image = {
+            image_id: result.public_id,
+            url: result.secure_url
+        }
+        await fs.unlink(req.files.image.tempFilePath)
+    }
+
     const updatedBook = await Book.findByIdAndUpdate(id, update, {
         new: true,
     });
-
-    if (!updatedBook) throw new NotFoundError(`No book with id ${id}`)
 
     res.status(StatusCodes.OK).json({ status: "success", book: updatedBook });
 };

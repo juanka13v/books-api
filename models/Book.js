@@ -15,7 +15,10 @@ const bookSchema = new Schema({
         required: true
     },
     summary: String,
-    image: String,
+    image: {
+        image_id: String,
+        url: String
+    },
     publication_date: {
         type: Date,
         required: true
