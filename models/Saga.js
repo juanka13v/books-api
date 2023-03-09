@@ -19,9 +19,12 @@ const sagaSchema = new mongoose.Schema(
                 ref: 'Book',
             },
         ],
-        images: {
-            type: [String],
-        },
+        images: [
+            {
+                id: String,
+                url: String
+            }
+        ],
         comments: [
             {
                 type: mongoose.Schema.Types.ObjectId,
