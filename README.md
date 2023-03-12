@@ -13,6 +13,9 @@
 
 - localhost:3000/api/v1/books
 - localhost:3000/api/v1/book/:id
+
+- localhost:3000/api/v1/categories
+- localhost:3000/api/v1/category/:id
 - 
 - localhost:3000/api/v1/authors
 - localhost:3000/api/v1/author/:id
