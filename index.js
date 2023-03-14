@@ -12,6 +12,7 @@ const authorRouter = require("./routes/author.route");
 const sagaRouter = require("./routes/saga.route");
 const commentRouter = require("./routes/comment.route");
 const authRouter = require("./routes/auth.route");
+const categoryRouter = require("./routes/category.route");
 
 const notFoundMiddleware = require("./middlewares/not-found");
 const errorHandlerMiddleware = require("./middlewares/error-handler");
@@ -36,6 +37,7 @@ app.use("/api/v1", bookRouter);
 app.use("/api/v1", authorRouter);
 app.use("/api/v1", sagaRouter);
 app.use("/api/v1", authRouter);
+app.use("/api/v1", categoryRouter);
 app.use("/api/v1", authUser, commentRouter);
 
 app.get("/", (req, res) => {

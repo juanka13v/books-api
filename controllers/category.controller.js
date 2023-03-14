@@ -47,7 +47,9 @@ const deleteCategory = async (req, res) => {
 
   if (!deletedCategory) throw new NotFoundError(`No category with id: ${id}`);
 
-  await deleteImage(deletedCategory.image.id);
+  if (deleteCategory.image?.id) {
+    await deleteImage(deletedCategory.image.id);
+  }
 
   res
     .status(StatusCodes.OK)
